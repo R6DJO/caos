@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+venv/
+.venv/
+
+.kks-workspace
+.kks-contests/
