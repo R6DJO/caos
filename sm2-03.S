@@ -1,8 +1,15 @@
-    .intel_syntax noprefix
-    .global main
+.intel_syntax noprefix
+.global main
+
+.macro SET_ALIAS alias, reg
+    \alias = \reg        // Устанавливаем псевдоним для регистра
+.endm
+
+SET_ALIAS val, rax       // Задаем псевдоним val для регистра rax
+
 main:
     call  readi64
-    mov   rdi, rax
+    mov   rdi, val
     add   rdi, [rip + delta]
     call  writei64
     call  finish
